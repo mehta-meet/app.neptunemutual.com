@@ -107,6 +107,9 @@ module.exports = {
         "8F949C": "#8F949C",
         "3A4557": "#3A4557",
       },
+      backgroundImage: {
+        "404-background": "url('/404_bg.png')",
+      },
     },
   },
   plugins: [require("@tailwindcss/forms")],
