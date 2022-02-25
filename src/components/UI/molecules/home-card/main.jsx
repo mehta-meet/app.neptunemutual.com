@@ -5,7 +5,7 @@ export const HomeMainCard = () => {
   return (
     <div
       className={
-        "w-full max-w-96 py-5 lg:py-0 lg:h-36  bg-white rounded-2xl border-0.5 border-B0C4DB flex flex-col justify-center items-center px-12 hover:shadow-homeCard"
+        "w-full max-w-96 py-5 lg:py-0 lg:h-36  bg-white rounded-2xl border-0.5 border-B0C4DB flex flex-col justify-center items-center px-12 shadow-homeCard"
       }
     >
       <div className="w-full flex items-center justify-between font-sora">
