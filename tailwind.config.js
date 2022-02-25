@@ -10,10 +10,6 @@ module.exports = {
       option: "0px 4px 8px rgba(0, 0, 0, 0.1)",
       homeCard: "0px 4px 5px rgba(0, 0, 0, 0.05)",
     },
-    borderWidth: {
-      0.5: "0.5px",
-      1: "1px",
-    },
     colors: {
       transparent: "transparent",
       current: "currentColor",
