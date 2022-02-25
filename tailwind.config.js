@@ -7,12 +7,18 @@ module.exports = {
       mainCard:
         "0 3px 3px 0 rgb(162, 166, 218, 0.05), 0 30px 60px -30px #a2a6da",
       toolTip: "0px 2px 6px rgba(0, 0, 0, 0.25)",
+      option: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+      homeCard: "0px 4px 5px rgba(0, 0, 0, 0.05)",
     },
     colors: {
       transparent: "transparent",
       current: "currentColor",
       black: "#01052d",
       white: "#fefeff",
+    },
+    borderWidth: {
+      0.5: "0.5px",
+      1: "1px",
     },
     fontSize: {
       h1: ["33px", "48px"],
@@ -27,6 +33,7 @@ module.exports = {
           lineHeight: "24px",
         },
       ],
+      h7: ["13px", "16px"],
       sm: ["14px", "16px"],
       xxs: ["10px", "8px"],
       xs: [
@@ -100,6 +107,9 @@ module.exports = {
         "404040": "#404040",
         "8F949C": "#8F949C",
         "3A4557": "#3A4557",
+      },
+      backgroundImage: {
+        "404-background": "url('/404_bg.png')",
       },
     },
   },

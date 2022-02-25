@@ -12,7 +12,6 @@ import { usePurchasePolicy } from "@/components/UI/organisms/cover-form/usePurch
 import { useState } from "react";
 import { usePolicyFees } from "@/components/UI/organisms/cover-form/usePolicyFees";
 import { useAppConstants } from "@/src/context/AppConstants";
-import { data } from "autoprefixer";
 import { useTokenSymbol } from "@/src/hooks/useTokenSymbol";
 import { formatCurrency } from "@/utils/formatter/currency";
 import InfoCircleIcon from "@/icons/InfoCircleIcon";
@@ -44,7 +43,7 @@ export const PurchasePolicyForm = ({ coverKey }) => {
     value,
     coverMonth,
     coverKey,
-    feeAmount: data.fee,
+    feeAmount: feeData.fee,
     feeError,
   });
 
@@ -178,8 +177,8 @@ const CovergaeInfoTooltipContent = () => {
   return (
     <>
       <Tooltip.Content side="right">
-        <div className="text-xs bg-black p-4 rounded-xl max-w-[15rem]">
-          <p className="text-white tracking-normal">
+        <div className="text-xs font-light leading-5 tracking-normal text-white bg-black p-4 rounded-xl max-w-[15rem]">
+          <p className="">
             Coverage period will cover from date of purchase up to the month you
             have selected.
           </p>

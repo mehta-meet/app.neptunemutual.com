@@ -23,7 +23,7 @@ export const usePurchasePolicy = ({
 }) => {
   const { library, account, chainId } = useWeb3React();
 
-  const [allowance, setAllowance] = useState();
+  const [allowance, setAllowance] = useState("0");
   const [approving, setApproving] = useState();
   const [purchasing, setPurchasing] = useState();
   const [error, setError] = useState("");
@@ -94,11 +94,13 @@ export const usePurchasePolicy = ({
   }, [account, balance, error, feeAmount, feeError, value]);
 
   const checkAllowance = async () => {
+    if (!account || !chainId) {
+      return;
+    }
     try {
       const signerOrProvider = getProviderOrSigner(library, account, chainId);
       const { result: _allowance } = await policy.getAllowance(
         chainId,
-        coverKey,
         account,
         signerOrProvider
       );
@@ -139,17 +141,16 @@ export const usePurchasePolicy = ({
   const handlePurchase = async () => {
     try {
       setPurchasing(true);
-      const args = {
-        duration: parseInt(coverMonth, 10),
-        amount: convertToUnits(value).toString(), // <-- Amount to Cover (In DAI)
-      };
 
       const signerOrProvider = getProviderOrSigner(library, account, chainId);
 
       const { result: tx } = await policy.purchaseCover(
         chainId,
         coverKey,
-        args,
+        {
+          duration: parseInt(coverMonth, 10),
+          amount: convertToUnits(value).toString(), // <-- Amount to Cover (In DAI)
+        },
         signerOrProvider
       );
 
@@ -169,7 +170,7 @@ export const usePurchasePolicy = ({
   const canPurchase =
     value &&
     isValidNumber(value) &&
-    isGreaterOrEqual(allowance || "0", value || "0");
+    isGreaterOrEqual(allowance || "0", feeAmount || "0");
 
   return {
     balance,
