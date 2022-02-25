@@ -90,9 +90,9 @@ export const HomePage = () => {
             Available Covers
           </h1>
           <SearchAndSortBar
-            sortClass="w-full md:w-48 lg:w-64"
+            sortClass="w-full md:w-48 lg:w-64  border-1 border-B0C4DB rounded-lg"
             containerClass="flex-col md:flex-row min-w-full md:min-w-sm"
-            searchClass="w-full md:w-64"
+            searchClass="w-full md:w-64 border-1 border-B0C4DB rounded-lg"
           />
         </div>
         <Grid className="mt-14 lg:mb-24 mb-14 gap-4">
